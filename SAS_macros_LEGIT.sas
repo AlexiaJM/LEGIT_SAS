@@ -149,7 +149,7 @@
 * Four genes g1, g2, g3, g4. Three environments e1, e2, e3. Two gene by gene interaction g1_g2, g1_g4. 
 * Binary outcome y at one time-point.
 *
-* LEGIT_glimmix(data, y, g1 g2 g3 g4 g1_g2 g1_g4, e1 e2 e3, Intercept z, Intercept z, Intercept z, Intercept z, gender ses, id=id, dist=binomial, link=logit)
+* LEGIT_glimmix(data, y, g1 g2 g3 g4 g1_g2 g1_g4, e1 e2 e3, Intercept z, Intercept z, Intercept z, Intercept z, gender ses, id=id, dist=binomial, link=logit);
 
 
 %macro LEGIT_glimmix(data, outcome, genes, env, model_noG_noE=, model_E_noG=, model_G_noE=, model_G_E=, covs=, id=id, remove_miss=1, time=, start_genes=, start_env=, eps = .0001, maxiter = 50, print = 0, print_final=1, ods_new=1, repeated=0, repeated_type=un, random_vars=, random_sub=, random_type=vc, where=, clear_ods=0, dist=normal, link=identity, method=MSPL);
@@ -797,7 +797,7 @@ ods exclude none;
 * Four genes g1, g2, g3, g4. Three environments e1, e2, e3. Two gene by gene interaction g1_g2, g1_g4. 
 * Continuous outcome y at one time-point.
 *
-* LEGIT_mixed(data, y, g1 g2 g3 g4 g1_g2 g1_g4, e1 e2 e3, Intercept z, Intercept z, Intercept z, Intercept z, gender ses, id=id)				  		
+* LEGIT_mixed(data, y, g1 g2 g3 g4 g1_g2 g1_g4, e1 e2 e3, Intercept z, Intercept z, Intercept z, Intercept z, gender ses, id=id);			  		
 
 
 %macro LEGIT_mixed(data, outcome, genes, env, model_noG_noE=, model_E_noG=, model_G_noE=, model_G_E=, covs=, id=PSCID, remove_miss=1, time=, start_genes=, start_env=, eps = .0001, maxiter = 50, print = 0, print_final=1, ods_new=1, repeated=1, repeated_type=un, random_vars=, random_sub=, random_type=vc, where=, clear_ods=0);
@@ -1425,7 +1425,7 @@ run;
 * Four genes g1, g2, g3, g4. Three environments e1, e2, e3. Two gene by gene interaction g1_g2, g1_g4. 
 * Binary outcome y at one time-point with loglog link.
 *
-* LEGIT_logistic(data, y, g1 g2 g3 g4 g1_g2 g1_g4, e1 e2 e3, Intercept z, Intercept z, Intercept z, Intercept z, gender ses, id=id, link=loglog)		
+* LEGIT_logistic(data, y, g1 g2 g3 g4 g1_g2 g1_g4, e1 e2 e3, Intercept z, Intercept z, Intercept z, Intercept z, gender ses, id=id, link=loglog);		
 
 
 %macro LEGIT_logistic(data, outcome, genes, env, model_noG_noE=, model_E_noG=, model_G_noE=, model_G_E=, covs=, id=PSCID, remove_miss=1, start_genes=, start_env=, eps = .0001, maxiter = 50, print = 0, print_final=1, ods_new=1, where=, clear_ods=0, link=logit);
@@ -2037,7 +2037,7 @@ ods exclude none;
 * Binary outcome y at one time-point with logit link. 
 * Using PROC LOGISTIC.
 *
-* LEGIT_cv(data, y, g1 g2 g3 g4 g1_g2 g1_g4, e1 e2 e3, logistic, Intercept z, Intercept z, Intercept z, Intercept z, gender ses, true_id=id, id=id, dist=binomial, link=logit)
+* LEGIT_cv(data, y, g1 g2 g3 g4 g1_g2 g1_g4, e1 e2 e3, logistic, Intercept z, Intercept z, Intercept z, Intercept z, gender ses, true_id=id, id=id, dist=binomial, link=logit);
 
 %macro LEGIT_cv(data, outcome, genes, env, proc_used, model_noG_noE=, model_E_noG=, model_G_noE=, model_G_E=, covs=, id=PSCID, true_id=true_id, time=time, start_env=, start_genes=, eps = .01, maxiter = 50, where=, n_extreme=10, repeated=0, repeated_type=un, random_vars=, random_sub=, random_type=vc, link=identity, dist=normal, method=MSPL, stop_short=0, no_log=1);
 	%if &no_log eq 1 %then %do;
@@ -2442,7 +2442,7 @@ ods exclude none;
 * Binary outcome y at one time-point with logit link.
 * Using PROC LOGISTIC, searching for environments.
 *
-* LEGIT_search(data, y, logistic, add_genes=0, genes_original=g1 g2 g3 g4 g1_g2 g1_g4, env_original=e1, env_extra=e2 e3, model_noG_noE=Intercept z, model_E_noG=Intercept z, model_G_noE=Intercept z, model_G_E=Intercept z, covs=gender ses, id=id, repeated=0, dist=binomial, link=logit)
+* LEGIT_search(data, y, logistic, add_genes=0, genes_original=g1 g2 g3 g4 g1_g2 g1_g4, env_original=e1, env_extra=e2 e3, model_noG_noE=Intercept z, model_E_noG=Intercept z, model_G_noE=Intercept z, model_G_E=Intercept z, covs=gender ses, id=id, repeated=0, dist=binomial, link=logit);
 
 
 %macro LEGIT_search(data, outcome, proc_used, add_genes=1, p_threshold=.10, AIC=1, genes_original=, genes_extra=,env_original=,env_extra=, model_noG_noE=, model_E_noG=, model_G_noE=, model_G_E=, covs=, id=PSCID, time=, start_genes=, start_env=, eps = .001, maxiter = 50, where=, repeated=0, repeated_type=un, random_vars=, random_sub=, random_type=vc, link=identity, dist=normal, method=MSPL, ods_new=1, same_sample=0, no_log=1);
