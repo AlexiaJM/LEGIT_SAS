@@ -11,4 +11,6 @@ Therefore, for fixed-effect models, I highly recommend using R exclusively and f
 
 **References**
 
-The paper discussing the alternating optimization approach to estimating the LEGIT parameters is available here: https://arxiv.org/abs/1703.08111
+https://arxiv.org/abs/1703.08111
+
+https://ajolicoeur.wordpress.com/legit/
