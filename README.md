@@ -11,6 +11,5 @@ Therefore, for fixed-effect models, I highly recommend using R exclusively and f
 
 **References**
 
-https://arxiv.org/abs/1703.08111
-
-https://ajolicoeur.wordpress.com/legit/
+* https://arxiv.org/abs/1703.08111
+* https://ajolicoeur.wordpress.com/legit/
